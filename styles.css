@@ -7,6 +7,7 @@
 }
 
 :root {
+  --font-size-extrasmall: 0.75rem;
   --font-size-small: 1rem;
   --font-size-medium: 1.25rem;
   --font-size-large: 1.5rem;
@@ -61,10 +62,17 @@ header {
 /* MAIN GRID LAYOUT */
 
 /* NAVIGATION LAYOUT */
+.navigation {
+  padding: 1rem;
+}
 .navigation__item {
   display: flex;
   justify-content: start;
   align-items: center;
+  margin-bottom: 1rem;
+}
+.navigation__title {
+  margin: 2rem 0 1.2rem;
 }
 .navigation__item__icon {
   width: 1.25rem;
@@ -82,4 +90,13 @@ img {
 .navigation__item__text {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
+}
+.navigation__title {
+  font-size: var(--font-size-extrasmall);
+  color: var(--color-2);
+  font-weight: 200;
+}
+.navigation__item {
+  text-decoration: none;
+  color: var(--color-font);
 }
