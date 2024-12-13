@@ -60,10 +60,20 @@ header {
 }
 
 /* MAIN GRID LAYOUT */
+main {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Must be changed later */
+  grid-template-rows: auto;
+  grid-template-areas: "navigation inventory card";
+}
 
 /* NAVIGATION LAYOUT */
 .navigation {
   padding: 1rem;
+  grid-area: navigation;
 }
 .navigation__item {
   display: flex;
@@ -77,6 +87,13 @@ header {
 .navigation__item__icon {
   width: 1.25rem;
   height: auto;
+}
+
+/* INVENTORY LAYOUT */
+.inventory {
+  grid-area: inventory;
+}
+.inventory-container {
 }
 
 /* MODULES */
