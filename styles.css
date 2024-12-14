@@ -27,6 +27,15 @@
   --color-7: #a686c4;
   --color-8: #e9ae79;
   --balance-padding: min(1.5rem, 5%);
+  --card-vertical-padding: 1rem;
+  --card-padding: var(--card-vertical-padding) 1.5rem;
+  --card-number-font-size: var(--font-size-large);
+  --card-bottom-background-height: calc(
+    var(--card-vertical-padding) + var(--card-number-font-size) +
+      var(--card-vertical-padding) * 1.5
+  );
+  --chip-width: 2.125rem;
+  --company-logo-width: 3.5rem;
 }
 
 html {
@@ -138,6 +147,60 @@ main {
   border-radius: 1em;
   padding: 0.3em 1em;
 }
+
+.card {
+  width: min(100%, 20rem);
+  height: 11rem;
+  padding: var(--card-padding);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  border-radius: 1rem;
+}
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-bottom {
+  margin-top: auto;
+}
+.card__chip {
+  width: var(--chip-width);
+  height: auto;
+}
+.card__company {
+  width: var(--company-logo-width);
+  height: auto;
+}
+.shopping-card:nth-of-type(1) {
+  background: linear-gradient(
+    to top,
+    var(--color-7) var(--card-bottom-background-height),
+    var(--color-4) var(--card-bottom-background-height)
+  );
+}
+.shopping-card:nth-of-type(2) {
+  background: linear-gradient(
+    to top,
+    var(--color-8) var(--card-bottom-background-height),
+    var(--color-5) var(--card-bottom-background-height)
+  );
+}
+.add-card {
+  border: 2px dashed var(--color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-card-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 /* MODULES */
 picture,
 img {
@@ -149,11 +212,13 @@ img {
 .navigation__item__text,
 .balance__title,
 .balance__cards,
-.balance__details {
+.balance__details,
+.add-card-text {
   font-size: var(--font-size-small);
 }
 .user__name,
-.navigation__item__text {
+.navigation__item__text,
+.add-card-text {
   font-weight: var(--font-weight-regular);
 }
 .balance__title,
@@ -161,7 +226,10 @@ img {
 .balance__details {
   font-weight: var(--font-weight-medium);
 }
-
+.money,
+.card__number {
+  font-size: var(--font-size-large);
+}
 .navigation__title {
   font-size: var(--font-size-extrasmall);
   color: var(--color-2);
@@ -171,10 +239,16 @@ img {
   text-decoration: none;
   color: var(--color-font);
 }
-.balance {
+.balance,
+.card:not(.add-card) {
   color: var(--color-body);
 }
 .money {
-  font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+}
+.card__number {
+  font-weight: var(--font-weight-extrabold);
+}
+.plus {
+  font-size: 1.75rem;
 }
