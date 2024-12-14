@@ -26,6 +26,7 @@
   --color-6: #73b06f;
   --color-7: #a686c4;
   --color-8: #e9ae79;
+  --header-height: 4rem;
   --main-grid-element-padding-vertical: 2.5vh;
   --section-padding: 2vh 5%;
   --balance-padding: min(1.5rem, 5%);
@@ -63,7 +64,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
+  min-height: var(--header-height);
   border-bottom: var(--border);
 }
 .user {
@@ -81,7 +83,7 @@ header {
 /* MAIN GRID LAYOUT */
 main {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
 
   display: grid;
   grid-template-columns: 0.7fr 2fr 1fr; /* Must be changed later */
