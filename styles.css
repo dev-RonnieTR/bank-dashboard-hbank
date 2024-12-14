@@ -108,7 +108,7 @@ main {
 /* INVENTORY LAYOUT */
 .inventory {
   grid-area: inventory;
-  padding: 1rem;
+  padding: 1.5rem;
 
   border-right: var(--border);
 }
