@@ -346,17 +346,25 @@ img {
 .balance__cards,
 .balance__details,
 .add-card-text,
-.inventory__title {
+.inventory__title,
+.card-details__title,
+.info__item__data {
   font-size: var(--font-size-small);
+}
+.card-details__number__number {
+  font-size: var(--font-size-medium);
 }
 .user__name,
 .navigation__item__text,
-.add-card-text {
+.add-card-text,
+.transaction-limit__title,
+.transaction-limit__text {
   font-weight: var(--font-weight-regular);
 }
 .balance__title,
 .balance__cards,
-.balance__details {
+.balance__details,
+.card-details__number__number {
   font-weight: var(--font-weight-medium);
 }
 .money,
@@ -368,6 +376,11 @@ img {
   color: var(--color-2);
   font-weight: 200;
 }
+.card-details__number__title,
+.info__item__title,
+.transaction-limit__title {
+  font-size: var(--font-size-extrasmall);
+}
 .navigation__item {
   text-decoration: none;
   color: var(--color-font);
@@ -376,7 +389,8 @@ img {
 .card:not(.add-card) {
   color: var(--color-body);
 }
-.money {
+.money,
+.card-details__title {
   font-weight: var(--font-weight-bold);
 }
 .card__number {
