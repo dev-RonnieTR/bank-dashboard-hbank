@@ -26,6 +26,8 @@
   --color-6: #73b06f;
   --color-7: #a686c4;
   --color-8: #e9ae79;
+  --main-grid-element-padding-vertical: 2.5vh;
+  --section-padding: 2vh 5%;
   --balance-padding: min(1.5rem, 5%);
   --card-width: 18rem;
   --card-vertical-padding: 1rem;
@@ -88,7 +90,7 @@ main {
 
 /* NAVIGATION LAYOUT */
 .navigation {
-  padding: 1rem;
+  padding: var(--main-grid-element-padding-vertical) 1rem;
   grid-area: navigation;
 
   border-right: var(--border);
@@ -111,12 +113,12 @@ main {
 /* INVENTORY LAYOUT */
 .inventory {
   grid-area: inventory;
-  padding: 1.5rem;
+  padding: var(--main-grid-element-padding-vertical) 3.5%;
 
   border-right: var(--border);
 }
 .inventory-section {
-  padding: 2vh 5%;
+  padding: var(--section-padding);
 
   display: flex;
   flex-direction: column;
@@ -249,6 +251,15 @@ main {
 }
 
 /* CARD DETAILS SECTION */
+.card-details {
+  padding: var(--main-grid-element-padding-vertical);
+}
+.card-details-section {
+  padding: var(--section-padding);
+  
+  border: var(--border);
+  border-radius: 1rem;
+}
 .card-details__info {
   display: flex;
 }
