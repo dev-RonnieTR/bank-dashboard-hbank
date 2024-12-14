@@ -27,7 +27,7 @@
   --color-7: #a686c4;
   --color-8: #e9ae79;
   --balance-padding: min(1.5rem, 5%);
-  --card-width: 20rem;
+  --card-width: 18rem;
   --card-vertical-padding: 1rem;
   --card-padding: var(--card-vertical-padding) 1.5rem;
   --card-number-font-size: var(--font-size-large);
