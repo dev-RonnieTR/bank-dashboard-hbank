@@ -27,6 +27,7 @@
   --color-7: #a686c4;
   --color-8: #e9ae79;
   --balance-padding: min(1.5rem, 5%);
+  --card-width: 20rem;
   --card-vertical-padding: 1rem;
   --card-padding: var(--card-vertical-padding) 1.5rem;
   --card-number-font-size: var(--font-size-large);
@@ -147,9 +148,18 @@ main {
   border-radius: 1em;
   padding: 0.3em 1em;
 }
-
+.details-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+}
+.inventory__title {
+  grid-column: 1 / -1;
+}
 .card {
-  width: min(100%, 20rem);
+  width: var(--card-width);
   height: 11rem;
   padding: var(--card-padding);
 
@@ -213,7 +223,8 @@ img {
 .balance__title,
 .balance__cards,
 .balance__details,
-.add-card-text {
+.add-card-text,
+.inventory__title {
   font-size: var(--font-size-small);
 }
 .user__name,
