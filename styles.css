@@ -258,8 +258,15 @@ main {
 .card-details-section {
   padding: var(--section-padding);
 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   border: var(--border);
   border-radius: 1rem;
+}
+.card-vertical-container {
+  align-self: center;
 }
 .card-details__info {
   display: flex;
@@ -270,6 +277,11 @@ main {
 .info__item:not(:first-of-type) {
   padding-left: 0.7rem;
   border-left: var(--border);
+}
+.transaction-limit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 .transaction-limit__bar {
