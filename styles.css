@@ -30,6 +30,7 @@
   --section-padding: 2vh 5%;
   --balance-padding: min(1.5rem, 5%);
   --card-width: 18rem;
+  --card-height: 11rem;
   --card-vertical-padding: 1rem;
   --card-padding: var(--card-vertical-padding) 1.5rem;
   --card-number-font-size: var(--font-size-large);
@@ -256,7 +257,7 @@ main {
 }
 .card-details-section {
   padding: var(--section-padding);
-  
+
   border: var(--border);
   border-radius: 1rem;
 }
@@ -281,7 +282,8 @@ main {
   height: 100%;
   background-color: var(--color-6);
 }
-.transaction-limit__bar, .transaction-limit__bar__progress {
+.transaction-limit__bar,
+.transaction-limit__bar__progress {
   border-radius: var(--bar-border-radius);
 }
 
@@ -292,7 +294,7 @@ img {
 }
 .card {
   width: var(--card-width);
-  height: 11rem;
+  height: var(--card-height);
   padding: var(--card-padding);
 
   display: flex;
@@ -319,14 +321,16 @@ img {
 }
 .card-vertical-container {
   position: relative;
+  width: var(--card-height);
   height: var(
     --card-width
   ); /*To ensure card won't go off where it should be after rotation*/
 }
 .card-vertical {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateY(-32%); /* TranslateY helps bringing the card to the left, back to where it should be for alignment*/
   position: absolute;
   top: 19%; /*This brings the card down from the top in order to bring it back to where it should be after the rotation*/
+  left: 0;
 }
 .separator {
   border: none;
