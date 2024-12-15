@@ -427,6 +427,11 @@ img {
   font-size: 1.75rem;
 }
 
+@media (min-width: 1280px) {
+  html {
+    font-size: clamp(16px, 1.25vw, 20px);
+  }
+}
 
 @media (max-width: 992px) {
   main {
