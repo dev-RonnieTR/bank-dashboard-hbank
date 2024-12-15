@@ -353,6 +353,11 @@ img {
   position: absolute;
   top: 19%; /*This brings the card down from the top in order to bring it back to where it should be after the rotation*/
   left: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-2) var(--card-bottom-background-height),
+    var(--color-6) var(--card-bottom-background-height)
+  ) !important;
 }
 .separator {
   border: none;
