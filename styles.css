@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
 :root {
@@ -28,6 +29,7 @@
   --color-8: #e9ae79;
   --header-height: 4rem;
   --main-grid-element-padding-vertical: 2.5vh;
+  --main-grid-element-padding-horizontal: 3.5%;
   --section-padding: 2vh 5%;
   --balance-padding: min(1.5rem, 5%);
   --card-width: 18rem;
@@ -122,7 +124,7 @@ main {
 /* INVENTORY LAYOUT */
 .inventory {
   grid-area: inventory;
-  padding: var(--main-grid-element-padding-vertical) 3.5%;
+  padding: var(--main-grid-element-padding-vertical) var(--main-grid-element-padding-horizontal);
 
   border-right: var(--border);
 }
@@ -183,7 +185,7 @@ main {
 .details-2 {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, var(--card-width));
+  grid-template-columns: repeat(auto-fill, min(100%, var(--card-width)));
   grid-auto-rows: auto;
   gap: 1.5rem;
 }
@@ -261,7 +263,7 @@ main {
 
 /* CARD DETAILS SECTION */
 .card-details {
-  padding: var(--main-grid-element-padding-vertical);
+  padding: var(--main-grid-element-padding-vertical) var(--main-grid-element-padding-horizontal);
 }
 .card-details-section {
   padding: var(--section-padding);
@@ -418,4 +420,51 @@ img {
 }
 .plus {
   font-size: 1.75rem;
+}
+
+
+@media (max-width: 992px) {
+  main {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "navigation   card"
+    "navigation   inventory";
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --card-width: 18rem;
+    --card-height: 11rem;
+    --font-size-large: clamp(1rem, 5vw, 1.5rem)
+
+  }
+
+  html {
+    font-size: clamp(10px, 5vw, 16px);
+  }
+
+
+  .navigation__item__text, .navigation__title {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    border: 1px solid red;
+  }
+  .navigation {
+    align-items: center;
+  }
+
+  main {
+    grid-template-columns: 7% 93%;
+  }
+
+  .card:not(.card-vertical) {
+    aspect-ratio: 18 / 11;
+    width: clamp(8rem, 70vw, var(--card-width));
+    height: auto;
+  }
 }
